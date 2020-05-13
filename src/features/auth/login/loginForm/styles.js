@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
     marginBotton: 50,
   },
   params: {
-    marginTop: 45,
+    marginTop: 20,
     marginBottom: 100,
     color: '#43425d',
     fontFamily: 'Poppins',
