@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   role: {
     marginTop: 20,
-    marginBottom: 65,
+    marginBottom: 45,
     color: '#A6A7AD',
     fontSize: 18,
     fontWeight: 400,

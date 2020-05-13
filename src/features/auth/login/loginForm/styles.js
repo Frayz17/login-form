@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   params: {
     marginTop: 20,
-    marginBottom: 100,
+    marginBottom: 90,
     color: '#43425d',
     fontFamily: 'Poppins',
     fontSize: 14,
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none',
   },
   submit: {
-    marginBottom: 45,
+    marginBottom: 50,
     width: 268,
     height: 56,
     borderRadius: 40,
@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
 
   // checkbox icon styles
   checkboxRoot: {
+    marginLeft: 2,
     '&:hover': {
       backgroundColor: 'transparent',
     },
