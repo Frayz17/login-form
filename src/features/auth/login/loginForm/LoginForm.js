@@ -5,19 +5,14 @@ import Typography from '@material-ui/core/Typography';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import clsx from 'clsx';
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './styles';
 
 const validationSchema = Yup.object({
-  username: Yup.string()
-    .min(3)
-    .max(15)
-    .required(),
-  password: Yup.string()
-    .min(8)
-    .max(60)
-    .required(),
+  username: Yup.string().min(3).max(15).required(),
+  password: Yup.string().min(8).max(60).required(),
 });
 
 const Login = () => {
@@ -37,9 +32,7 @@ const Login = () => {
         }, 1000);
       }}
     >
-      {({
-        values, handleSubmit, handleChange, handleBlur,
-      }) => (
+      {({ values, handleSubmit, handleChange, handleBlur }) => (
         <form className={classes.form} onSubmit={handleSubmit}>
           <TextField
             variant="standard"
@@ -48,7 +41,6 @@ const Login = () => {
             type="text"
             fullWidth
             className={classes.input}
-
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.name}
@@ -64,7 +56,6 @@ const Login = () => {
             name="password"
             fullWidth
             className={classes.input}
-
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.password}
@@ -76,8 +67,22 @@ const Login = () => {
 
           <Box className={classes.params}>
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label={<Typography className={classes.checkboxLabel}>Remember Me</Typography>}
+              control={
+                <Checkbox
+                  className={classes.checkboxRoot}
+                  checkedIcon={
+                    <span className={clsx(classes.icon, classes.checkedIcon)} />
+                  }
+                  icon={<span className={classes.icon} />}
+                  value="remember"
+                  color="primary"
+                />
+              }
+              label={
+                <Typography className={classes.checkboxLabel}>
+                  Remember Me
+                </Typography>
+              }
             />
             <Button className={classes.forgotPassword}>Forgot Password</Button>
           </Box>
@@ -96,6 +101,5 @@ const Login = () => {
     </Formik>
   );
 };
-
 
 export default Login;
