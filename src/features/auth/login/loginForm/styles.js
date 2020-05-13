@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none',
   },
   submit: {
-    marginBottom: 65,
+    marginBottom: 45,
     width: 268,
     height: 56,
     borderRadius: 40,
